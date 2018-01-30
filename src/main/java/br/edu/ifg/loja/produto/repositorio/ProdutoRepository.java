@@ -13,5 +13,5 @@ import java.util.Optional;
 public interface ProdutoRepository extends CrudRepository<Produto, Long> {
 
     List<Produto> findByNomeContaining(String nome);
-    Optional<Produto> findOne(long id);
+    Optional<Produto> findOneOptional(Long id);
 }
