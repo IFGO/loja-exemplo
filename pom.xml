@@ -68,7 +68,7 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<archive>
 						<manifest>
-							<mainClass>br.edu.ifg.loja.LojaApplication</mainClass>
+							<mainClass>br.edu.ifg.loja.api.LojaApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

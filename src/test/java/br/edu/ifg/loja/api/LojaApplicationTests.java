@@ -1,4 +1,4 @@
-package br.edu.ifg.loja;
+package br.edu.ifg.loja.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
