@@ -1,16 +1,14 @@
-package br.edu.ifg.loja.produto.repositorio;
+package br.edu.ifg.loja.api.produto.repositorio;
 
-import br.edu.ifg.loja.produto.Imagem;
-import br.edu.ifg.loja.produto.Produto;
+import br.edu.ifg.loja.api.produto.Imagem;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
 /**
  * Repositorio para persistencia de dados de produtos.
  * @author otaviocx
  */
+@Repository
 public interface ImagemRepository extends CrudRepository<Imagem, Long> {
 
 }

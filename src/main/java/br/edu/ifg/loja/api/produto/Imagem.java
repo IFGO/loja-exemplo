@@ -1,4 +1,4 @@
-package br.edu.ifg.loja.produto;
+package br.edu.ifg.loja.api.produto;
 
 import javax.persistence.*;
 
@@ -21,6 +21,10 @@ public class Imagem {
 
     @ManyToOne
     private Produto produto;
+
+    public Imagem() {
+
+    }
 
     public Long getId() {
         return id;

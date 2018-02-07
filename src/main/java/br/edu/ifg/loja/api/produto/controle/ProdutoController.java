@@ -1,9 +1,9 @@
-package br.edu.ifg.loja.produto.controle;
+package br.edu.ifg.loja.api.produto.controle;
 
-import br.edu.ifg.loja.commons.exceptions.NaoEncontradoException;
-import br.edu.ifg.loja.commons.exceptions.ParametrosInvalidosException;
-import br.edu.ifg.loja.produto.Produto;
-import br.edu.ifg.loja.produto.repositorio.ProdutoRepository;
+import br.edu.ifg.loja.api.commons.exceptions.NaoEncontradoException;
+import br.edu.ifg.loja.api.commons.exceptions.ParametrosInvalidosException;
+import br.edu.ifg.loja.api.produto.Produto;
+import br.edu.ifg.loja.api.produto.repositorio.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -36,8 +36,8 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    public Produto buscarPeloId(@PathVariable Long id) {
-        return produtoRepository.findOneOptional(id)
+    public Produto buscarPeloId(@PathVariable long id) {
+        return produtoRepository.findOne(id)
                 .orElseThrow(NaoEncontradoException::new);
     }
 
@@ -48,17 +48,17 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public void removerProduto(@PathVariable Long id) {
-        produtoRepository.findOneOptional(id).orElseThrow(NaoEncontradoException::new);
+    public void removerProduto(@PathVariable long id) {
+        produtoRepository.findOne(id).orElseThrow(NaoEncontradoException::new);
         produtoRepository.delete(id);
     }
 
     @PutMapping("/{id}")
-    public Produto atualizarProduto(@RequestBody Produto produto, @PathVariable Long id) {
+    public Produto atualizarProduto(@RequestBody Produto produto, @PathVariable long id) {
         if (produto.getId() == null || !produto.getId().equals(id)) {
             throw new ParametrosInvalidosException("O id do produto deve ser informado corretamente", null);
         }
-        produtoRepository.findOneOptional(id).orElseThrow(NaoEncontradoException::new);
+        produtoRepository.findOne(id).orElseThrow(NaoEncontradoException::new);
         return produtoRepository.save(produto);
     }
 

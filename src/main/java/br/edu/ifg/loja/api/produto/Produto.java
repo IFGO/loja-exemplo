@@ -1,4 +1,4 @@
-package br.edu.ifg.loja.produto;
+package br.edu.ifg.loja.api.produto;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,6 +25,10 @@ public class Produto {
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<Imagem> imagens;
+
+    public Produto() {
+
+    }
 
     public Long getId() {
         return id;

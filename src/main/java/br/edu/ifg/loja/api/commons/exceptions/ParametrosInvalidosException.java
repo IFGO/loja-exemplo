@@ -1,4 +1,4 @@
-package br.edu.ifg.loja.commons.exceptions;
+package br.edu.ifg.loja.api.commons.exceptions;
 
 /**
  * Exceção que ocorre quando algum parametro de requisição está inválido ou é
