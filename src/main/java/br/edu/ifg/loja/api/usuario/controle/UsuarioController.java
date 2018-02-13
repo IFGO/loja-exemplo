@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controlador responsavel por disponibilizar end-points de gestao de produtos
+ * Controlador responsavel por disponibilizar end-points de gestao de usuarios
  * @author otaviocx
  */
 @RestController
@@ -20,7 +20,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void removerProduto(@PathVariable Long id) {
+    public void removerUsuario(@PathVariable Long id) {
         usuarioRepository.delete(id);
     }
 
