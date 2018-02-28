@@ -23,6 +23,8 @@ public class Produto {
 
     private Integer qtdEstoque;
 
+    private String caminhoImagem;
+    
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<Imagem> imagens;
 
@@ -69,4 +71,12 @@ public class Produto {
     public void setQtdEstoque(Integer qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
     }
+    
+        public String getCaminhoImagem() {
+		return caminhoImagem;
+	}
+
+	public void setCaminhoImagem(String caminhoImagem) {
+		this.caminhoImagem = caminhoImagem;
+	}
 }
